@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
+
+    <div id="jtron1" style="width: 960px" class="mx-auto">
+        <div class="jumbotron" style="text-align: center">
+            <h1 class="display-4">Guess 1 2 3 or 4</h1>
+            <button type="button" id="b1" style="width: 500px" "margin: 20px" class="btn btn-primary btn-lg">Large button</button>
+            <button type="button" id="b2" style="width: 500px" class="btn btn-primary btn-lg">Large button</button>
+            <button type="button" id="b3" style="width: 500px" class="btn btn-primary btn-lg">Large button</button>
+            <button type="button" id="b4" style="width: 500px" class="btn btn-primary btn-lg">Large button</button>
+
+        </div>
+    </div>
+    <div id="jtron2" style="width: 960px" class="mx-auto">
+        <div class="jumbotron" style="text-align: center">
+            <h1 class="display-4">Guess 1 2 3 or 4</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero voluptate illum eaque possimus repellat ab facilis
+                est quidem cumque, vel fugiat corrupti atque at sed minima et, nihil esse maiores.</p>
+        </div>
+    </div>
+    <script>
+        var questions = {
+            info: [{
+                title: "Which of these actors did not play in Jaws",
+                a1: "Roy Scheider",
+                a2: "bob",
+                a3: "fred",
+                a4: "tim",
+                correctResponse: 4,
+            }, {
+                title: "Which of these actors did not play in Ghandi",
+                a1: "Roy Scheider",
+                a2: "john",
+                a3: "mark",
+                a4: "tom",
+                correctResponse: 1
+            }]
+        };
+
+
+            var x =1;
+        // for (x = 0; x < 2; x++) {
+        //     console.log(questions.info[x].title);
+        //     console.log(questions.info[x].a1);
+        //     console.log(questions.info[x].a2);
+        //     console.log(questions.info[x].a3);
+        //     console.log(questions.info[x].a4);
+        //     console.log(questions.info[x].correctResponse);
+        // }
+ //       var showAnswer;
+        var i = 8;
+        $("#jtron2").hide();
+        $("#b1").click(showAnswer);
+        $("#b2").click(showAnswer);
+        $("#b3").click(showAnswer);
+        $("#b4").click(showAnswer);
+        $("#b1").click(showAnswer);
+        showQuestion();
+
+        function showAnswer() {
+            clearInterval(counter1);
+            i = 8;
+            $("#jtron1").hide();
+            $("#jtron2").show();
+            setTimeout(showQuestion, 3000);
+
+        }
+        function showQuestion() {
+            counter1 = setInterval(countdown, 1000)
+            $("#h1").text(questions.info[x].title);
+            $("#b1").text(questions.info[x].a1);
+            $("#b2").text(questions.info[x].a2);
+            $("#b3").text(questions.info[x].a3);
+            $("#b4").text(questions.info[x].a4);
+            
+            $("#jtron1").show();
+            $("#jtron2").hide();
+            //      setInterval(showAnswer, 2000);
+        }
+
+        function countdown() {
+            i--;
+            console.log(i);
+            if (i === 0) {
+                clearInterval(counter1);
+                i = 8;
+                showAnswer();
+            }
+            else {
+                showQuestion;
+            }
+        }
+
+   // setInterval(function () {
+     //   $("#stopWatch").html(i);
+       // i--;
+   // }, 1000);
+//});
+
+//$("#resetButton").click(function (e) {
+  //  i = 0;
+//}); 
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
