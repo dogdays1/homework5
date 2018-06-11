@@ -80,7 +80,7 @@ $(document).ready(function () {
     var unAns = 0;
     var corrAns = 0;
     var comment = 0;
-    $("#jtron2").hide();
+    $("#jtron1").hide();
     $("#b1").click(choice1);
     $("#b2").click(choice2);
     $("#b3").click(choice3);
@@ -89,7 +89,8 @@ $(document).ready(function () {
     var x = 0;
     $("#jtron2").hide();
     $("#jtron3").hide();
-    showQuestion();
+    $("#jtron4").click(showQuestion);
+   // showQuestion();
 
     // for (x = 0; x < 4; x++) {
     // showQuestion();
@@ -118,6 +119,8 @@ $(document).ready(function () {
             $("#b4").text(questions.info[x].a4);
             $("#jtron1").show();
             $("#jtron2").hide();
+            $("#jtron4").hide();
+            
             // noAns = parseInt(questions.info[x].correctResponse);
         }
     }
